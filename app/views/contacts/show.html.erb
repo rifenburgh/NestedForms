@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contact.name %>
+</p>
+
+<!-- Nested Form begin 
+<% if @contact.addresses.any? %> 
+-->
+<%= @contact.addresses.each do |addy| %>
+<%= link_to addresses, address %>
+<%= @addy %>
+<% end %>
+<!--
+<% else %>
+<p>None Available</p>	
+<% end %> 
+-->
+
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>

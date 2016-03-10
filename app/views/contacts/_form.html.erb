@@ -1,0 +1,39 @@
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+   
+           <%= addresses_form.label :address2 %>
+           <%= addresses_form.text_field :address2 %>
+           <p>poop</p>
+
+  </div>
+  <div>
+    
+      
+
+           <!--
+           <%#= addy.check_box :_destory %>
+           <%#= addy.label :_destroy, 'remove' %>
+           -->
+          
+       
+          
+     <% end %> 
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
