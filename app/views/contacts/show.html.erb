@@ -3,20 +3,21 @@
 <p>
   <strong>Name:</strong>
   <%= @contact.name %>
-  <!--  -->
-  
+  <!--  Nested Form Begin -->
+  <p>Addresses</p>
+    @contact.addresses Details<br>
+    <%= @contact.addresses.inspect %><br>
+    <p></p>@Contract Details<br>
+    <%= @contact.inspect %><br>
+    <p></p>@address1<br>
+    <%= @address1.inspect %>
+	    
+	    <% if @contact.addresses.any? %>
+		    <%= @contact.addressses.each do |addresses_form| %>
+		    <%= link_to addresses, addresses %>
+		    <% end %>
+  		<% end %>
 </p>
 
-<!-- Nested Form begin -->
-	<% if @contact.addresses.any? %> 
-		<%= @address.addresses.each do |addy| %>
-		<%= link_to addresses, addresses %>
-		<% end %>
-	<% else %>
-	<p>None Available</p>	
-	<% end %> 
-
-
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Show', @contact %> |
 <%= link_to 'Back', contacts_path %>

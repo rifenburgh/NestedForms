@@ -18,7 +18,8 @@
       
       <p>Addresses</p>
       <%= f.fields_for :addresses do |addresses_form| %>
-            <% address.create() %>
+            <%= addresses_form.label :name %>
+            <%= addresses_form.text_field :name %>
             <%= addresses_form.label :address1 %>
             <%= addresses_form.text_field :address1 %>
        <% end %>
