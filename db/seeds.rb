@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 joe = Contact.create(name: 'Joe Smith')
 sam = Contact.create(name: 'Sam Strong')
-['123 Main Street'].each do [addy] 
-	joe.address.create(name: addy)
+['123 Main Street'].each do |addy| 
+	joe.contact.addresses.create(name: addy)
 end
 
 

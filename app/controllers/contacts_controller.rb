@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
-    @contact.addresses.build
+    #@contact.addresses.build
   end
 
   # GET /contacts/1/edit
@@ -63,12 +63,6 @@ class ContactsController < ApplicationController
     end
   end
 
-  def _destroy
-  end
-
-  def name
-  end
-  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
