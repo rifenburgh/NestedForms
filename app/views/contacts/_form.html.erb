@@ -1,35 +1,38 @@
 <%= form_for(@contact) do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
-        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-        <ul>
-        <% @contact.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field">
-      
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-      
-      <p>Addresses</p>
-      <%= f.fields_for :addresses do |addresses_form| %>
-            <!--
-            <%#= addresses_form.label :name %>
-            <%#= addresses_form.text_field :name %>
-            -->
-            <%= addresses_form.label :address1 %>
-            <%= addresses_form.text_field :address1 %>
-       <% end %>
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
-  <div>
-         
-      
+  <% end %>
+
+  <h3>Contact</h3>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
+
+  <h3>Address</h3>
+  <%= f.fields_for :addresses do |addresses_form| %>
+    <div class="field">
+      <%= addresses_form.label :address1 %><br>
+      <%= addresses_form.text_field :address1 %>
+    </div>
+    <div class="field">
+      <%= addresses_form.label :address2 %><br>
+      <%= addresses_form.text_field :address2 %>
+    </div>
+    <div class="field">
+      <%= addresses_form.label :zip %><br>
+      <%= addresses_form.number_field :zip %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
