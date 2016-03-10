@@ -7,6 +7,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+
+
 #gem 'cocoon'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -19,10 +21,10 @@ group :development do
   gem 'spring'
 end
 
-#group :production do
-#	gem 'pg', '~> 0.18.2'
-#	gem 'rails_12factor'
-#end
+group :production do
+#	gem 'pg', '~> 0.18.4'
+	gem 'rails_12factor'
+end
 
 
 
