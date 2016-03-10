@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+
+gem 'bundler', '1.11.2'
 gem 'rails', '4.2.5.1'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
