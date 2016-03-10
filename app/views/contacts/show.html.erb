@@ -9,7 +9,7 @@
 
 <!-- Nested Form begin -->
 	<% if @contact.addresses.any? %> 
-		<%= @contact.addresses.each do |addy| %>
+		<%= @address.addresses.each do |addy| %>
 		<%= link_to addresses, addresses %>
 		<% end %>
 	<% else %>
